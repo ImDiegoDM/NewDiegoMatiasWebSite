@@ -1,0 +1,5 @@
+app-side-scroller{
+  display: flex;
+  flex-direction: row;
+  height: 28rem;
+}

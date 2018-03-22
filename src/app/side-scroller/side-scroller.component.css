@@ -1,0 +1,14 @@
+.box{
+  align-items: stretch;
+  position: relative;
+  width: 30rem;
+  flex-direction: row-reverse;
+}
+
+.green{
+  background-color: green;
+}
+
+.red{
+  background-color: red;
+}
