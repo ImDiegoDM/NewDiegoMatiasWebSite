@@ -1,22 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { SideScrollerComponent } from './side-scroller/side-scroller.component';
 import { BoxComponent } from './box/box.component';
+import { ProfilePictureComponent } from './profile-picture/profile-picture.component';
+import { DescriptionComponent } from './description/description.component';
+
+import { ProfileService } from './profile.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SideScrollerComponent,
-    BoxComponent
+    BoxComponent,
+    ProfilePictureComponent,
+    DescriptionComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
