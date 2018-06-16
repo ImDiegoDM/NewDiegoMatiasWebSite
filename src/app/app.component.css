@@ -1,6 +1,7 @@
 app-side-scroller{
   display: flex;
   flex-direction: row;
-  height: 28rem;
+  flex-grow: 1;
+  flex-shrink: 1;
   box-shadow: 0 2rem 4rem 0.25rem rgba(46,43,55,.575);
 }

@@ -19,8 +19,8 @@ export class ProfileService {
 
   getDescription():Promise<{title:string,content:string}>{
     return new Promise((resolve,reject)=>{
-      this.http.get(environment.wpUrl+'profile_picture').subscribe((data:any)=>{
-        resolve({title:data[0].title,content:data[0].content});
+      this.http.get(environment.wpUrl+'description').subscribe((data:any)=>{
+        resolve({title:data[0].title.rendered,content:data[0].content.rendered});
       },(err)=>{
         reject(err);
       });

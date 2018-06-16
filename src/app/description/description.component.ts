@@ -5,7 +5,7 @@ import { BoxComponent } from '../box/box.component';
 @Component({
   selector: 'app-description',
   templateUrl: './description.component.html',
-  styleUrls: ['./description.component.css']
+  styleUrls: ['./description.component.css','../box/box.component.css']
 })
 export class DescriptionComponent extends BoxComponent implements OnInit {
 

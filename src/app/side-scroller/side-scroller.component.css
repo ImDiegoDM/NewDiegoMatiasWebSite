@@ -1,8 +1,12 @@
 .box{
-  align-items: stretch;
+  align-items: flex-start;
+  justify-content: center;
   position: relative;
+  padding-top: 56.25%;
   width: 30rem;
   flex-direction: row-reverse;
+  flex-shrink: 1;
+  flex-grow: 1;
 }
 
 .green{

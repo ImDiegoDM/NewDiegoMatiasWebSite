@@ -1,3 +1,6 @@
-<p>
-  description works!
-</p>
+<div class="wraper" [ngStyle]="{'width' : width+'rem', 'background-image' : 'url('+profileUrl+')'}">
+  <div *ngIf="description">
+    <h1>{{description.title}}</h1>
+    <div class="content" [innerHTML]="description.content"></div>
+  </div>
+</div>
