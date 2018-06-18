@@ -27,4 +27,16 @@ export class ProfileService {
     });
   }
 
+  getKnowledges():Promise<{title:string,imgUrl:string}[]>{
+    return new Promise((resolve,reject)=>{
+      this.http.get(environment.wpUrl+'knowledges?per_page=100&orderby=title&order=asc').subscribe((data:any[])=>{
+        resolve(data.map((item)=>{
+          return {title:item.title.rendered,imgUrl:item.acf.Image};
+        }));
+      },(err)=>{
+        reject(err);
+      });
+    })
+  }
+
 }

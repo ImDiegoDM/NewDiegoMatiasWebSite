@@ -9,6 +9,7 @@ import { ProfilePictureComponent } from './profile-picture/profile-picture.compo
 import { DescriptionComponent } from './description/description.component';
 
 import { ProfileService } from './profile.service';
+import { KnowledgeComponent } from './knowledge/knowledge.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ProfileService } from './profile.service';
     SideScrollerComponent,
     BoxComponent,
     ProfilePictureComponent,
-    DescriptionComponent
+    DescriptionComponent,
+    KnowledgeComponent
   ],
   imports: [
     BrowserModule,

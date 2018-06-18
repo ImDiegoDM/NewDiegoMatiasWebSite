@@ -34,7 +34,13 @@ html{
   font-size: 12pt;
   font-size: 2.1vmax;
 }
-h1{
+@media (min-width:1200px) {
+  html{
+    font-size: 12pt;
+    font-size: 1.5vmax;
+  }
+}
+h1,h3,h4{
   position: relative;
 
 }
@@ -44,7 +50,17 @@ h1::after{
   bottom: -13px;
   left: 0;
   width: 3.5rem;
-  height: .07rem;
+  height: 1px;
+  background-color: rgba(255,255,255,.25);
+}
+
+h3::after,h4::after{
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 3.5rem;
+  height: 1px;
   background-color: rgba(255,255,255,.25);
 }
 
@@ -59,7 +75,13 @@ app-root{
 }
 
 app-description{
-  padding: 3rem 4rem;
+  padding: 7rem 4rem;
   background: linear-gradient(135deg, #0c4576 0%,#0d6e77 37%,#0c4576 100%)!important;
   color: white;
+}
+
+app-knowledge{
+  background: linear-gradient(45deg, #634b93 0%,#917e96 100%)!important;
+  color: white;
+  padding: 1.5rem 2.5rem;
 }
