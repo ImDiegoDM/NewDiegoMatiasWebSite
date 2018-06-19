@@ -39,4 +39,18 @@ export class ProfileService {
     })
   }
 
+  getTexts():Promise<{title:string,text:string,color:string[]}[]>{
+    return new Promise((resolve,reject)=>{
+      this.http.get(environment.wpUrl+'texts').subscribe(
+        (response:any)=>{
+          resolve(response.map((item)=>{
+            return {title:item.title.rendered,text:item.content.rendered,color:[item.acf.color_1,item.acf.color_2,item.acf.color_3]}
+          }));
+        },(err)=>{
+          reject(err);
+        }
+      )
+    });
+  }
+
 }

@@ -10,6 +10,7 @@ import { DescriptionComponent } from './description/description.component';
 
 import { ProfileService } from './profile.service';
 import { KnowledgeComponent } from './knowledge/knowledge.component';
+import { TextSectionComponent } from './text-section/text-section.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { KnowledgeComponent } from './knowledge/knowledge.component';
     BoxComponent,
     ProfilePictureComponent,
     DescriptionComponent,
-    KnowledgeComponent
+    KnowledgeComponent,
+    TextSectionComponent
   ],
   imports: [
     BrowserModule,

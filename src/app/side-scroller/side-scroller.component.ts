@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfileService } from '../profile.service';
 
 @Component({
   selector: 'app-side-scroller',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideScrollerComponent implements OnInit {
 
-  constructor() { }
+  texts;
 
-  ngOnInit() {
+  constructor(private profileService:ProfileService) { }
+
+  async ngOnInit() {
+    this.texts =  await this.profileService.getTexts();
   }
 
 }

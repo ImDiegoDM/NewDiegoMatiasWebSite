@@ -4,6 +4,7 @@ body,html,app-root{
   /* background-color: #e8e8e8; */
   margin: 0;
   display: flex;
+  color: white;
 }
 
 /* body{
@@ -34,6 +35,7 @@ html{
   font-size: 12pt;
   font-size: 2.1vmax;
 }
+
 @media (min-width:1200px) {
   html{
     font-size: 12pt;
