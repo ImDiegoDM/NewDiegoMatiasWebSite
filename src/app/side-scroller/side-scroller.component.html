@@ -2,3 +2,6 @@
 <app-description  [width]="15"></app-description>
 <app-knowledge  [width]="40"></app-knowledge>
 <app-text-section [width]="30" *ngFor="let text of texts" [title]="text.title" [text]="text.text" [ngStyle]="{'background': 'linear-gradient(135deg,'+text.color[0]+' 0%,'+text.color[1]+' 37%,'+text.color[2]+' 100%)'}"></app-text-section>
+<app-text-section [width]="18" title="Projetos" text="Alguns dos projetos nos quais eu já trabalhei." [ngStyle]="{'background': 'linear-gradient(135deg, #f2ac6f 0%, #895656 100%)'}"></app-text-section>
+<app-project-section></app-project-section>
+<app-text-section [width]="18" [title]="contact.title" [text]="contact.text" [ngStyle]="{'background': 'linear-gradient(135deg,'+contact.color[0]+' 0%,'+contact.color[1]+' 37%,'+contact.color[2]+' 100%)'}"></app-text-section>

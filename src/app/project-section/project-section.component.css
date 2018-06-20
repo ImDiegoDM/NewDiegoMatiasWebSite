@@ -1,0 +1,48 @@
+.group{
+  height: 100%;
+  display: inline-block;
+  line-height: 0; 
+}
+
+.item{
+  line-height: 0;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+
+.item img{
+  transform: scale(1);
+  object-fit: cover;
+  display: block;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  transition: all .5s;
+}
+
+.item:hover img{
+  transform: scale(1.1);
+}
+
+.item::after{
+  content: '';
+  position: absolute;
+  opacity: 1;
+  transition: all .5s;
+  background: linear-gradient(45deg,rgba(114,97,147,.25) 25%,rgba(227,123,124,.25) 50%,rgba(255,228,180,.25));
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.item:hover{
+  cursor: pointer;
+}
+
+.item:hover::after{
+  opacity: 0;
+}

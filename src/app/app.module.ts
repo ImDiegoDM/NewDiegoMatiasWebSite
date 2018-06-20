@@ -11,6 +11,7 @@ import { DescriptionComponent } from './description/description.component';
 import { ProfileService } from './profile.service';
 import { KnowledgeComponent } from './knowledge/knowledge.component';
 import { TextSectionComponent } from './text-section/text-section.component';
+import { ProjectSectionComponent } from './project-section/project-section.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { TextSectionComponent } from './text-section/text-section.component';
     ProfilePictureComponent,
     DescriptionComponent,
     KnowledgeComponent,
-    TextSectionComponent
+    TextSectionComponent,
+    ProjectSectionComponent
   ],
   imports: [
     BrowserModule,

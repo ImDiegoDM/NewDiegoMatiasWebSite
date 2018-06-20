@@ -1,0 +1,7 @@
+<div class="wraper" [ngStyle]="{'width' : width+'rem', 'background-image' : 'url('+profileUrl+')'}">
+  <div *ngFor="let group of projectsGrouped" [ngStyle]="{'width':group.width+'rem'}" class="group">
+    <div *ngFor="let item of group.items" [ngStyle]="{'width':item.width,'height':item.height}" class="item">
+      <img src="{{item.item.img_1}}" alt="">
+    </div>
+  </div>
+</div>

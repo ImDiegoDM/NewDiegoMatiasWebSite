@@ -9,11 +9,13 @@ import { ProfileService } from '../profile.service';
 export class SideScrollerComponent implements OnInit {
 
   texts;
+  contact;
 
   constructor(private profileService:ProfileService) { }
 
   async ngOnInit() {
     this.texts =  await this.profileService.getTexts();
+    this.contact = await this.profileService.getContact();
   }
 
 }
