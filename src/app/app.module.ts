@@ -12,6 +12,7 @@ import { ProfileService } from './profile.service';
 import { KnowledgeComponent } from './knowledge/knowledge.component';
 import { TextSectionComponent } from './text-section/text-section.component';
 import { ProjectSectionComponent } from './project-section/project-section.component';
+import { ContactSectionComponent } from './contact-section/contact-section.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ProjectSectionComponent } from './project-section/project-section.compo
     DescriptionComponent,
     KnowledgeComponent,
     TextSectionComponent,
-    ProjectSectionComponent
+    ProjectSectionComponent,
+    ContactSectionComponent
   ],
   imports: [
     BrowserModule,

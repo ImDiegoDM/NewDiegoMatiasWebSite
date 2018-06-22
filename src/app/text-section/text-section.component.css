@@ -1,5 +1,5 @@
 .wraper{
-  padding: 4rem;
+  padding: 4rem 2rem;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -12,7 +12,7 @@
   letter-spacing: -.05em;
 }
 .content{
-  font-size: .65rem;
+  font-size: .7rem;
   letter-spacing: .03rem;
   color: #d6d6d6;
 }

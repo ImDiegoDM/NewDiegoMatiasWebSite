@@ -97,4 +97,22 @@ export class ProfileService {
     });
   }
 
+  getSocialMedias():Promise<{title:string,icon:string,link:string}[]>{
+    return new Promise((resolve,reject)=>{
+      this.http.get(environment.wpUrl+'socialmedias').subscribe(
+        (response:any)=>{
+          resolve(response.map((item)=>{
+            return{
+              title:item.title.rendered,
+              icon:item.acf.icon,
+              link:item.acf.link
+            }
+          }));
+        },(err)=>{
+          reject(err);
+        }
+      )
+    });
+  }
+
 }

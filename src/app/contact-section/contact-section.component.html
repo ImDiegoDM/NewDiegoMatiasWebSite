@@ -1,0 +1,25 @@
+<div class="wraper" [ngStyle]="{'width' : width+'rem', 'background':'linear-gradient(45deg, #60346b 0%,#3c3b61 100%)'}">
+  <form >
+    <div class="field half">
+      <label for="email">Nome</label>
+      <input type="text" name="" value="">
+    </div>
+    <div class="field half">
+      <label for="email">Email</label>
+      <input type="email" name="" value="">
+    </div>
+    <div class="field full">
+      <label for="email">Mensagem</label>
+      <textarea name="name" rows="8"></textarea>
+    </div>
+    <div class="field">
+      <button type="submit" name="Enviar">Enviar Mensagem</button>
+    </div>
+  </form>
+  <div class="vl"></div>
+  <div class="socialMedias">
+    <div *ngFor="let item of socialMedias" class="">
+      <i class="fa {{item.icon}}" aria-hidden="true"></i><a href="{{item.link}}">{{item.title}}</a>
+    </div>
+  </div>
+</div>
