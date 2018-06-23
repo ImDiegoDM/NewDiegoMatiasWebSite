@@ -2,16 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { BoxComponent } from '../box/box.component';
 import { ProfileService } from '../profile.service';
 
+
 @Component({
   selector: 'app-project-section',
   templateUrl: './project-section.component.html',
-  styleUrls: ['./project-section.component.css','../box/box.component.css']
+  styleUrls: ['./project-section.component.css','../box/box.component.css','../../assets/font-awesome-4.7.0/css/font-awesome.min.css']
 })
 export class ProjectSectionComponent extends BoxComponent implements OnInit {
   projectsGrouped=[];
   groupWidth='30rem';
   width;
-  groupsFolow=[2,1,4,1,3,1]
+  groupsFolow=[2,1,4,1,3,1];
+  aspect=1.777777;
+  projectSelected;
+  inline;
 
   constructor(private profileService:ProfileService) {super(); }
 
@@ -83,6 +87,24 @@ export class ProjectSectionComponent extends BoxComponent implements OnInit {
         {item:item[3],height:'50%',width:'65%'}
       ]
     }
+  }
+
+  selectProject(item){
+    this.projectSelected=item;
+    // this.projectSelected.flex = '0';
+    this.inline = 'none';
+    setTimeout(()=>{
+      this.inline= 'inline';
+    },10);
+  }
+
+  exitProject(){
+    this.projectSelected.selectedImg = this.projectSelected.img_1;
+    this.projectSelected = undefined;
+  }
+
+  selectImg(img){
+    this.projectSelected.selectedImg=img;
   }
 
   async ngOnInit() {

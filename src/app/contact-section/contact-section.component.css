@@ -26,6 +26,14 @@ form{
   flex-wrap: wrap;
 }
 
+.sended{
+  width: 32rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .half{
   width: 50%;
 }

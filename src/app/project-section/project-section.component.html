@@ -1,7 +1,34 @@
 <div class="wraper" [ngStyle]="{'width' : width+'rem', 'background-image' : 'url('+profileUrl+')'}">
   <div *ngFor="let group of projectsGrouped" [ngStyle]="{'width':group.width+'rem'}" class="group">
-    <div *ngFor="let item of group.items" [ngStyle]="{'width':item.width,'height':item.height}" class="item">
+    <div *ngFor="let item of group.items" (click)="selectProject(item.item)" [ngStyle]="{'width':item.width,'height':item.height}" class="item">
       <img src="{{item.item.img_1}}" alt="">
     </div>
+  </div>
+</div>
+<div *ngIf="projectSelected" class="projectShow">
+  <i class="fa fa-times" (click)="exitProject()" aria-hidden="true"></i>
+  <div *ngIf="projectSelected.video" class="galeryVideo">
+    <iframe  id="modalVideo" style="width: 100%;height: 100%;" [src]="projectSelected.video | safe" frameborder="0" allowfullscreen=""></iframe>
+  </div>
+  <div *ngIf="!projectSelected.video" class="galeryImages">
+    <img class="selected" src="{{projectSelected.selectedImg}}" alt="">
+    <div class="chose">
+      <div class="box">
+        <img [ngStyle]="{'display':inline}" (click)="selectImg(projectSelected.img_1)" src="{{projectSelected.img_1}}" alt="">
+      </div>
+      <div class="box">
+        <img [ngStyle]="{'display':inline}" (click)="selectImg(projectSelected.img_2)" src="{{projectSelected.img_2}}" alt="">
+      </div>
+      <div class="box">
+        <img [ngStyle]="{'display':inline}" (click)="selectImg(projectSelected.img_3)" src="{{projectSelected.img_3}}" alt="">
+      </div>
+      <div class="box">
+        <img [ngStyle]="{'display':inline}" (click)="selectImg(projectSelected.img_4)" src="{{projectSelected.img_4}}" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="contentImages">
+    <h3 [innerHTML]="projectSelected.title"></h3>
+    <div class="content" [innerHTML]="projectSelected.text"></div>
   </div>
 </div>

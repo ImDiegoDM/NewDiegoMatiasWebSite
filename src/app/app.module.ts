@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SideScrollerComponent } from './side-scroller/side-scroller.component';
@@ -13,6 +14,7 @@ import { KnowledgeComponent } from './knowledge/knowledge.component';
 import { TextSectionComponent } from './text-section/text-section.component';
 import { ProjectSectionComponent } from './project-section/project-section.component';
 import { ContactSectionComponent } from './contact-section/contact-section.component';
+import { SafePipe } from './safe.pipe';
 
 
 @NgModule({
@@ -25,11 +27,13 @@ import { ContactSectionComponent } from './contact-section/contact-section.compo
     KnowledgeComponent,
     TextSectionComponent,
     ProjectSectionComponent,
-    ContactSectionComponent
+    ContactSectionComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ProfileService],
   bootstrap: [AppComponent]

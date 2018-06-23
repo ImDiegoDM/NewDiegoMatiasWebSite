@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  wpUrl:'https://wp.diegomatias.com.br/wp-json/wp/v2/'
+  wpUrl:'https://wp.diegomatias.com.br/wp-json/'
 };

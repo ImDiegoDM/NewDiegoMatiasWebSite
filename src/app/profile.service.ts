@@ -19,7 +19,7 @@ export class ProfileService {
 
   getProfillePicture():Promise<string>{
     return new Promise((resolve,reject)=>{
-      this.http.get(environment.wpUrl+'profile_picture').subscribe((data:any)=>{
+      this.http.get(environment.wpUrl+'wp/v2/profile_picture').subscribe((data:any)=>{
         resolve(data[data.length-1].acf.picture);
       },(err)=>{
         reject(err);
@@ -29,7 +29,7 @@ export class ProfileService {
 
   getDescription():Promise<{title:string,content:string}>{
     return new Promise((resolve,reject)=>{
-      this.http.get(environment.wpUrl+'description').subscribe((data:any)=>{
+      this.http.get(environment.wpUrl+'wp/v2/description').subscribe((data:any)=>{
         resolve({title:data[0].title.rendered,content:data[0].content.rendered});
       },(err)=>{
         reject(err);
@@ -39,7 +39,7 @@ export class ProfileService {
 
   getKnowledges():Promise<{title:string,imgUrl:string}[]>{
     return new Promise((resolve,reject)=>{
-      this.http.get(environment.wpUrl+'knowledges?per_page=100&orderby=title&order=asc').subscribe((data:any[])=>{
+      this.http.get(environment.wpUrl+'wp/v2/knowledges?per_page=100&orderby=title&order=asc').subscribe((data:any[])=>{
         resolve(data.map((item)=>{
           return {title:item.title.rendered,imgUrl:item.acf.Image};
         }));
@@ -51,7 +51,7 @@ export class ProfileService {
 
   getTexts():Promise<{title:string,text:string,color:string[]}[]>{
     return new Promise((resolve,reject)=>{
-      this.http.get(environment.wpUrl+'texts').subscribe(
+      this.http.get(environment.wpUrl+'wp/v2/texts').subscribe(
         (response:any)=>{
           resolve(response.map((item)=>{
             return {title:item.title.rendered,text:item.content.rendered,color:[item.acf.color_1,item.acf.color_2,item.acf.color_3]}
@@ -65,7 +65,7 @@ export class ProfileService {
 
   getContact():Promise<{title:string,text:string,color:string[]}>{
     return new Promise((resolve,reject)=>{
-      this.http.get(environment.wpUrl+'contact').subscribe(
+      this.http.get(environment.wpUrl+'wp/v2/contact').subscribe(
         (response)=>{
           resolve({title:response[0].title.rendered,text:response[0].content.rendered,color:[response[0].acf.color_1,response[0].acf.color_2,response[0].acf.color_3]});
         },(err)=>{
@@ -77,12 +77,13 @@ export class ProfileService {
 
   getProjects():Promise<Project[]>{
     return new Promise((resolve,reject)=>{
-      this.http.get(environment.wpUrl+'posts?per_page=100&order=asc').subscribe(
+      this.http.get(environment.wpUrl+'wp/v2/posts?per_page=100&order=asc').subscribe(
         (response:any)=>{
           resolve(response.map((item)=>{
             return{
               title:item.title.rendered,
               text:item.content.rendered,
+              selectedImg:item.acf.img_1,
               img_1:item.acf.img_1,
               img_2:item.acf.img_2,
               img_3:item.acf.img_3,
@@ -99,7 +100,7 @@ export class ProfileService {
 
   getSocialMedias():Promise<{title:string,icon:string,link:string}[]>{
     return new Promise((resolve,reject)=>{
-      this.http.get(environment.wpUrl+'socialmedias').subscribe(
+      this.http.get(environment.wpUrl+'wp/v2/socialmedias').subscribe(
         (response:any)=>{
           resolve(response.map((item)=>{
             return{
@@ -115,4 +116,15 @@ export class ProfileService {
     });
   }
 
+  sendEmailMessage(name,email,message):Promise<any>{
+    return new Promise((resolve,reject)=>{
+      this.http.post(environment.wpUrl+'email/send',{name:name,email:email,message:message}).subscribe(
+        (response)=>{
+          resolve(response);
+        },(err)=>{
+          reject(err);
+        }
+      );
+    });
+  }
 }
