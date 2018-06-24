@@ -1,5 +1,5 @@
-<div class="wraper" [ngStyle]="{'width' : width+'rem', 'background-image' : 'url('+profileUrl+')'}">
-  <div *ngIf="knowledges" class="">
+<div class="wraper" [ngStyle]="{'width' : width+'rem'}">
+  <div *ngIf="knowledges" class="list">
     <h4>Conhecimentos</h4>
     <ul>
       <li *ngFor="let item of knowledges">{{item.title}}</li>

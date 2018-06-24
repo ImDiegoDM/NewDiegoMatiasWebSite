@@ -1,4 +1,11 @@
 .wraper{
   background-size: cover;
   background-position: right;
+  height: 100%;
+}
+
+@media (max-width:425px) {
+  .wraper{
+    width: 100%!important;
+  }
 }

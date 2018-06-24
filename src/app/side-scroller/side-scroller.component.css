@@ -16,3 +16,14 @@
 .red{
   background-color: red;
 }
+
+.first-section .content{
+  display: flex;
+  /* flex-wrap: wrap; */
+  width: 100%;
+}
+@media (max-width:425px) {
+  .first-section .content{
+    flex-wrap: wrap;
+  }
+}

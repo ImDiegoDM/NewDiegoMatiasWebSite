@@ -1,6 +1,8 @@
-<div class="wraper" [ngStyle]="{'width' : width+'rem', 'background-image' : 'url('+profileUrl+')'}">
+<div class="wraper" [ngStyle]="{'width' : width+'rem'}">
   <div *ngIf="description">
     <h1>{{description.title}}</h1>
     <div class="content" [innerHTML]="description.content"></div>
   </div>
+  <i (click)="scrollToFirst()" class="fa-chevron-right" aria-hidden="true"></i>
+  <!-- <a (click)="scrollToFirst()">></a> -->
 </div>

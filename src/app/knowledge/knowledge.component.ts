@@ -19,7 +19,7 @@ export class KnowledgeComponent extends BoxComponent implements OnInit {
     }else if(this.knowledges.length % 3==0){
       this.listClass='three conected';
     }else{
-      this.listClass='four ';
+      this.listClass='four';
     }
   }
 

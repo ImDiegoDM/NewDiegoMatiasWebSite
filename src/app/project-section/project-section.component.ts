@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BoxComponent } from '../box/box.component';
 import { ProfileService } from '../profile.service';
+import { AppComponent } from '../app.component';
 
 
 @Component({
@@ -25,9 +26,10 @@ export class ProjectSectionComponent extends BoxComponent implements OnInit {
 
   group1(item){
     return {
+      class:'smallG',
       width:18,
       items:[
-        {item:item,height:'100%',width:'100%'}
+        {item:item,class:'full'}
       ]
     }
   }
@@ -44,10 +46,11 @@ export class ProjectSectionComponent extends BoxComponent implements OnInit {
   group2(item){
     this.shuffleArray(item);
     return {
+      class:'mediumG',
       width:25,
       items:[
-        {item:item[0],height:'50%',width:'100%'},
-        {item:item[1],height:'50%',width:'100%'}
+        {item:item[0],class:'halfH'},
+        {item:item[1],class:'halfH'}
       ]
     }
   }
@@ -57,20 +60,22 @@ export class ProjectSectionComponent extends BoxComponent implements OnInit {
     let r = Math.floor(Math.random()*2);
     if(r==0){
       return {
+        class:'mediumG',
         width:25,
         items:[
-          {item:item[0],height:'50%',width:'100%'},
-          {item:item[1],height:'50%',width:'50%'},
-          {item:item[2],height:'50%',width:'50%'}
+          {item:item[0],class:'halfH'},
+          {item:item[1],class:'halfHW'},
+          {item:item[2],class:'halfHW'}
         ]
       }
     }else{
       return {
+        class:'mediumG',
         width:25,
         items:[
-          {item:item[0],height:'50%',width:'50%'},
-          {item:item[1],height:'50%',width:'50%'},
-          {item:item[2],height:'50%',width:'100%'}
+          {item:item[0],class:'halfHW'},
+          {item:item[1],class:'halfHW'},
+          {item:item[2],class:'halfH'}
         ]
       }
     }
@@ -79,23 +84,26 @@ export class ProjectSectionComponent extends BoxComponent implements OnInit {
   group4(item){
     this.shuffleArray(item);
     return {
+      class:'largeG',
       width:35,
       items:[
-        {item:item[0],height:'50%',width:'65%'},
-        {item:item[1],height:'50%',width:'35%'},
-        {item:item[2],height:'50%',width:'35%'},
-        {item:item[3],height:'50%',width:'65%'}
+        {item:item[0],class:'halfHlargeW'},
+        {item:item[1],class:'halfHsmallW'},
+        {item:item[2],class:'halfHsmallW'},
+        {item:item[3],class:'halfHlargeW'}
       ]
     }
   }
 
   selectProject(item){
-    this.projectSelected=item;
-    // this.projectSelected.flex = '0';
-    this.inline = 'none';
-    setTimeout(()=>{
-      this.inline= 'inline';
-    },10);
+    if(!AppComponent.moving){
+      this.projectSelected=item;
+      // this.projectSelected.flex = '0';
+      this.inline = 'none';
+      setTimeout(()=>{
+        this.inline= 'inline';
+      },10);
+    }
   }
 
   exitProject(){
