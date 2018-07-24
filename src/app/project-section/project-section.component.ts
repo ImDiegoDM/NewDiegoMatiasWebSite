@@ -126,6 +126,7 @@ export class ProjectSectionComponent extends BoxComponent implements OnInit {
         groupIndex=0;
       }
       console.log(group)
+      group=Math.min(projects.length,group);
       if(group==4){
         let item1 = projects.pop();
         let item2 = projects.pop();
